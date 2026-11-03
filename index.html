@@ -11,17 +11,17 @@
 <meta property="og:image" content="https://varditer-etn.vercel.app/images/profile_web.jpg">
 <style>
   :root{
-    --bg:#140a0f;
-    --panel:#1f1118;
-    --panel2:#26151f;
-    --line:#43283a;
-    --text:#f4eef1;
-    --muted:#c9b6c0;
-    --muted2:#9a8590;
-    --accent:#e889b0;
-    --accent-deep:#6C0038;
-    --accent-soft:rgba(232,137,176,0.13);
-    --good:#5fd39a;
+    --bg:#f5f7fb;
+    --panel:#ffffff;
+    --panel2:#ffffff;
+    --line:#dbe1ee;
+    --text:#05164D;
+    --muted:#46516f;
+    --muted2:#5f6987;
+    --accent:#1d3f94;
+    --accent-deep:#05164D;
+    --accent-soft:rgba(5,22,77,0.07);
+    --good:#1a8a52;
     --warn:#e0b34a;
     --maxw:1180px;
   }
@@ -43,7 +43,7 @@
   }
   .avatar{
     width:104px; height:104px; flex-shrink:0; border-radius:50%; overflow:hidden;
-    border:2px solid var(--accent-deep); box-shadow:0 0 0 4px rgba(232,137,176,0.10);
+    border:2px solid var(--accent-deep); box-shadow:0 0 0 4px rgba(5,22,77,0.08);
   }
   .avatar img{width:100%; height:100%; object-fit:cover;}
   .sidebar h1{font-size:26px; margin:0; letter-spacing:0.2px;}
@@ -55,7 +55,7 @@
     display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--accent);
     font-weight:600;
   }
-  .status .dot{width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 8px var(--accent);}
+  .status .dot{width:7px; height:7px; border-radius:50%; background:var(--good);}
   nav.sidenav{display:flex; flex-direction:column; gap:2px; margin-top:6px;}
   nav.sidenav a{
     color:var(--muted); font-size:14px; padding:9px 10px; border-radius:8px;
@@ -73,7 +73,7 @@
     transition:all .15s ease; text-align:center; cursor:pointer; background:none; font-family:inherit;
   }
   .btn:hover{text-decoration:none; border-color:var(--accent);}
-  .btn.primary{background:linear-gradient(135deg, var(--accent-deep), var(--accent)); border:none;}
+  .btn.primary{background:linear-gradient(135deg, var(--accent-deep), var(--accent)); border:none; color:#fff;}
   .btn.primary:hover{filter:brightness(1.1);}
   .btn.small{padding:7px 12px; font-size:12.5px; font-weight:500; border-color:var(--line); color:var(--muted);}
   .btn.small:hover{color:var(--text); border-color:var(--accent);}
@@ -127,8 +127,8 @@
   .two-col-shots{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:14px 0;}
   @media(max-width:700px){.two-col-shots{grid-template-columns:1fr;}}
   .promptbox{
-    background:#0d0609; border:1px solid var(--line); border-radius:10px; padding:16px 18px;
-    font-family:'SF Mono', 'Consolas', monospace; font-size:12.5px; color:#ead9e1; white-space:pre-wrap;
+    background:#f5f7fb; border:1px solid var(--line); border-radius:10px; padding:16px 18px;
+    font-family:'SF Mono', 'Consolas', monospace; font-size:12.5px; color:#05164D; white-space:pre-wrap;
     max-height:340px; overflow-y:auto; line-height:1.55;
   }
   .callout{
@@ -143,7 +143,7 @@
 
   /* Modal (used for case studies, contact popup, and image lightbox) */
   .modal-overlay{
-    position:fixed; inset:0; background:rgba(10,4,7,0.82); backdrop-filter:blur(3px);
+    position:fixed; inset:0; background:rgba(5,10,30,0.78); backdrop-filter:blur(3px);
     display:none; align-items:flex-start; justify-content:center; z-index:100;
     padding:6vh 20px; overflow-y:auto;
   }
@@ -151,7 +151,7 @@
   .modal-box{
     background:var(--panel2); border:1px solid var(--line); border-radius:18px;
     max-width:760px; width:100%; padding:38px 40px 34px; position:relative;
-    box-shadow:0 30px 80px rgba(0,0,0,0.5);
+    box-shadow:0 30px 80px rgba(5,22,77,0.25);
   }
   .modal-close{
     position:absolute; top:16px; right:16px; width:34px; height:34px; border-radius:50%;
@@ -195,7 +195,7 @@
   .lang-item{display:flex; justify-content:space-between; font-size:14.5px;}
   .lang-item b{color:var(--text);}
   .lang-item span{color:var(--muted2);}
-  .bar{height:5px; background:var(--panel2); border-radius:3px; margin-top:6px; overflow:hidden;}
+  .bar{height:5px; background:var(--line); border-radius:3px; margin-top:6px; overflow:hidden;}
   .bar i{display:block; height:100%; background:linear-gradient(90deg, var(--accent-deep), var(--accent));}
 
   /* Contact section */
