@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varditer Badoyan — Travel, operations &amp; AI projects</title>
+<meta name="description" content="Tourism graduate in Bratislava. A travel service planned from scratch, client documents, and AI automations for routine work.">
+<meta property="og:title" content="Varditer Badoyan — Travel, operations &amp; AI projects">
+<meta property="og:description" content="Tourism graduate in Bratislava. A travel service planned from scratch, client documents, and AI automations for routine work.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://varditer-etn.vercel.app/images/profile_web.jpg">
+<meta property="og:image" content="https://vard-portf.vercel.app/images/profile_web.jpg">
+<style>
+  :root{
+    --bg:#140a0f;
+    --panel:#1f1118;
+    --panel2:#26151f;
+    --line:#43283a;
+    --text:#f4eef1;
+    --muted:#c9b6c0;
+    --muted2:#9a8590;
+    --accent:#e889b0;
+    --accent-deep:#6C0038;
+    --accent-soft:rgba(232,137,176,0.13);
+    --good:#5fd39a;
+    --warn:#e0b34a;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    line-height:1.6;
+  }
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  img{max-width:100%; display:block;}
+  .wrap{display:grid; grid-template-columns:340px 1fr; max-width:1560px; margin:0 auto;}
+  .sidebar{
+    position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto;
+    padding:44px 34px; border-right:1px solid var(--line);
+    display:flex; flex-direction:column; gap:22px;
+  }
+  .avatar{
+    width:104px; height:104px; flex-shrink:0; border-radius:50%; overflow:hidden;
+    border:2px solid var(--accent-deep); box-shadow:0 0 0 4px rgba(232,137,176,0.10);
+  }
+  .avatar img{width:100%; height:100%; object-fit:cover;}
+  .sidebar h1{font-size:26px; margin:0; letter-spacing:0.2px;}
+  .sidebar .tagline{color:var(--muted); font-size:15px; margin-top:6px;}
+  .role-note{
+    color:var(--accent); font-size:12.5px; font-weight:600; letter-spacing:0.3px; margin-top:10px;
+  }
+  .status{
+    display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--accent);
+    font-weight:600;
+  }
+  .status .dot{width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 8px var(--accent);}
+  nav.sidenav{display:flex; flex-direction:column; gap:2px; margin-top:6px;}
+  nav.sidenav a{
+    color:var(--muted); font-size:14px; padding:9px 10px; border-radius:8px;
+    border-left:2px solid transparent; transition:all .15s ease;
+  }
+  nav.sidenav a:hover{color:var(--text); text-decoration:none; background:var(--panel);}
+  nav.sidenav a.active{color:var(--text); border-left:2px solid var(--accent); background:var(--accent-soft);}
+  .side-cta{
+    display:flex; flex-direction:column; gap:10px; margin-top:auto; padding-top:18px; border-top:1px solid var(--line);
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:11px 16px; border-radius:10px; font-size:14px; font-weight:600;
+    border:1px solid var(--accent-deep); color:var(--text); text-decoration:none;
+    transition:all .15s ease; text-align:center; cursor:pointer; background:none; font-family:inherit;
+  }
+  .btn:hover{text-decoration:none; border-color:var(--accent);}
+  .btn.primary{background:linear-gradient(135deg, var(--accent-deep), var(--accent)); border:none;}
+  .btn.primary:hover{filter:brightness(1.1);}
+  .btn.small{padding:7px 12px; font-size:12.5px; font-weight:500; border-color:var(--line); color:var(--muted);}
+  .btn.small:hover{color:var(--text); border-color:var(--accent);}
+  .side-links{display:flex; gap:14px; font-size:13px; color:var(--muted2);}
+  main{padding:56px 60px 100px;}
+  section{max-width:var(--maxw); margin-bottom:96px; scroll-margin-top:30px;}
+  .eyebrow{color:var(--accent); font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; display:flex; align-items:center; gap:10px;}
+  .eyebrow .num{font-variant-numeric:tabular-nums;}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line);}
+  h2.h{font-size:34px; margin:10px 0 22px; letter-spacing:-0.3px;}
+  p.lead{font-size:17px; color:var(--muted); max-width:760px;}
+  .tags{display:flex; flex-wrap:wrap; gap:9px; margin-top:18px;}
+  .tag{
+    font-size:12.5px; color:var(--text); background:var(--panel); border:1px solid var(--line);
+    padding:6px 12px; border-radius:20px;
+  }
+  .quote{
+    border-left:3px solid var(--accent); padding:4px 0 4px 22px; margin:26px 0; font-style:italic;
+    color:var(--text); font-size:17px; max-width:720px;
+  }
+  .strengths{display:grid; grid-template-columns:repeat(2,1fr); gap:12px 30px; margin-top:26px; max-width:760px;}
+  .strengths div{font-size:14.5px; color:var(--text); display:flex; gap:10px; align-items:baseline;}
+  .strengths div::before{content:"—"; color:var(--accent); flex-shrink:0;}
+
+  /* Selected Work — clickable cards (open modal) */
+  .work-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:8px;}
+  @media(max-width:900px){.work-grid{grid-template-columns:1fr;}}
+  .case-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:26px 26px 22px;
+    cursor:pointer; transition:border-color .15s ease, transform .15s ease;
+  }
+  .case-card:hover{border-color:var(--accent); transform:translateY(-2px);}
+  .case-card:focus-visible, .shot:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .case-kicker{color:var(--accent); font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase;}
+  .case-title{font-size:20px; margin:10px 0 8px; color:var(--text); font-weight:700; line-height:1.3;}
+  .case-short{color:var(--muted); font-size:14.5px;}
+  .case-tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:16px;}
+  .case-tags span{font-size:11.5px; background:var(--bg); border:1px solid var(--line); color:var(--muted); padding:4px 9px; border-radius:14px;}
+  .expand-row{display:flex; justify-content:space-between; align-items:center; margin-top:18px;}
+  .expand-label{font-size:13px; color:var(--accent); font-weight:600;}
+  .expand-label::before{content:"↗ ";}
+
+  .case-body h4{font-size:14px; text-transform:uppercase; letter-spacing:0.8px; color:var(--accent); margin:22px 0 8px;}
+  .case-body h4:first-child{margin-top:0;}
+  .case-body p, .case-body li{color:var(--text); font-size:15px;}
+  .case-body ul{margin:6px 0; padding-left:20px;}
+  .case-body li{margin-bottom:7px;}
+  .shot{border-radius:10px; border:1px solid var(--line); margin:14px 0; overflow:hidden; background:#000;}
+  .shot img{width:100%; cursor:zoom-in;}
+  .shot-cap{font-size:12.5px; color:var(--muted2); margin-top:-8px; margin-bottom:14px;}
+  .two-col-shots{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:14px 0;}
+  @media(max-width:700px){.two-col-shots{grid-template-columns:1fr;}}
+  .promptbox{
+    background:#0d0609; border:1px solid var(--line); border-radius:10px; padding:16px 18px;
+    font-family:'SF Mono', 'Consolas', monospace; font-size:12.5px; color:#ead9e1; white-space:pre-wrap;
+    max-height:340px; overflow-y:auto; line-height:1.55;
+  }
+  .callout{
+    background:var(--accent-soft); border:1px solid var(--accent-deep); border-radius:10px;
+    padding:14px 18px; font-size:14.5px; margin-top:18px;
+  }
+  .callout b{color:var(--accent);}
+  .live-link{
+    display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:600;
+    margin-top:6px; color:var(--accent);
+  }
+
+  /* Modal (used for case studies, contact popup, and image lightbox) */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(10,4,7,0.82); backdrop-filter:blur(3px);
+    display:none; align-items:flex-start; justify-content:center; z-index:100;
+    padding:6vh 20px; overflow-y:auto;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:var(--panel2); border:1px solid var(--line); border-radius:18px;
+    max-width:760px; width:100%; padding:38px 40px 34px; position:relative;
+    box-shadow:0 30px 80px rgba(0,0,0,0.5);
+  }
+  .modal-close{
+    position:absolute; top:16px; right:16px; width:34px; height:34px; border-radius:50%;
+    background:var(--panel); border:1px solid var(--line); color:var(--muted); font-size:16px;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+  }
+  .modal-close:hover{color:var(--text); border-color:var(--accent);}
+
+  /* Contact modal specifics */
+  .contact-modal h3{font-size:24px; margin:0 0 8px;}
+  .contact-modal p.sub{color:var(--muted); font-size:14.5px; margin:0 0 26px;}
+  .contact-big{
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:18px 20px; margin-bottom:14px;
+  }
+  .contact-big .label{font-size:11.5px; text-transform:uppercase; letter-spacing:0.8px; color:var(--muted2); margin-bottom:4px;}
+  .contact-big .value{font-size:19px; font-weight:700; color:var(--text);}
+  .contact-big .actions{display:flex; gap:8px; flex-shrink:0;}
+  .icon-btn{
+    width:38px; height:38px; border-radius:9px; border:1px solid var(--line); background:var(--bg);
+    color:var(--muted); display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:15px;
+  }
+  .icon-btn:hover{color:var(--accent); border-color:var(--accent);}
+  .copy-toast{font-size:12.5px; color:var(--good); margin-top:-6px; margin-bottom:10px; height:14px;}
+
+  /* Experience */
+  .job{margin-bottom:30px; max-width:800px;}
+  .job-head{display:flex; flex-wrap:wrap; gap:8px; align-items:baseline; margin-bottom:8px;}
+  .job-title{font-weight:700; font-size:16.5px;}
+  .job-meta{color:var(--muted2); font-size:13.5px;}
+  .job ul{margin:0; padding-left:20px; color:var(--muted); font-size:14.5px;}
+  .job li{margin-bottom:5px;}
+
+  /* Skills */
+  .skill-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px 40px; max-width:900px;}
+  @media(max-width:700px){.skill-grid{grid-template-columns:1fr;}}
+  .skill-block h4{font-size:13px; text-transform:uppercase; letter-spacing:0.8px; color:var(--accent); margin:0 0 8px;}
+  .skill-block p{font-size:14.5px; color:var(--muted); margin:0;}
+  .lang-row{display:flex; flex-direction:column; gap:14px; max-width:520px; margin-top:8px;}
+  .lang-item{display:flex; justify-content:space-between; font-size:14.5px;}
+  .lang-item b{color:var(--text);}
+  .lang-item span{color:var(--muted2);}
+  .bar{height:5px; background:var(--panel2); border-radius:3px; margin-top:6px; overflow:hidden;}
+  .bar i{display:block; height:100%; background:linear-gradient(90deg, var(--accent-deep), var(--accent));}
+
+  /* Contact section */
+  .contact-box{
+    background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:50px 46px; text-align:center;
+  }
+  .contact-box h3{font-size:30px; margin:0 0 12px;}
+  .contact-box p{color:var(--muted); margin:0 0 26px;}
+  .contact-buttons{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .contact-meta{margin-top:26px; display:flex; gap:26px; justify-content:center; flex-wrap:wrap; font-size:13.5px; color:var(--muted2);}
+
+  footer{max-width:var(--maxw); color:var(--muted2); font-size:12.5px; padding-top:20px; border-top:1px solid var(--line);}
+
+  /* Image lightbox */
+  .lightbox-img{width:100%; border-radius:8px;}
+
+  @media(max-width:980px){
+    .wrap{grid-template-columns:1fr;}
+    .sidebar{position:relative; height:auto; border-right:none; border-bottom:1px solid var(--line);}
+    main{padding:40px 22px 80px;}
+  }
+
+  /* Project gallery */
+  .project{display:grid; grid-template-columns:1.25fr 1fr; gap:30px; align-items:start; background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:22px; margin-top:22px;}
+  .project-shots{display:grid; grid-template-columns:1fr; gap:12px;}
+  .project-shots .shot{margin:0; aspect-ratio:16/10;}
+  .project-shots .shot img{width:100%; height:100%; object-fit:cover; object-position:top;}
+  .project-shots:not(.one){grid-template-columns:1fr 1fr;}
+  .project-text h3{font-size:21px; margin:8px 0 10px; line-height:1.3;}
+  .project-text p{color:var(--muted); font-size:15px; margin:0 0 10px;}
+  .project-text .live-link{margin-top:14px;}
+  @media(max-width:900px){.project{grid-template-columns:1fr; padding:16px;}}
+  .timeline{display:flex; flex-direction:column; gap:10px; margin:24px 0 6px; max-width:760px; font-size:15px;}
+  .timeline div{border-left:2px solid var(--accent-deep); padding-left:14px; color:var(--muted);}
+  .timeline b{color:var(--text);}
+  .timeline span{display:block; font-size:13px; color:var(--muted2);}
+  .modal-box.wide{max-width:1200px; padding:44px 20px 20px;}
+</style>
+<body>
+<div class="wrap">
+
+  <aside class="sidebar">
+    <div class="avatar"><img src="images/profile_web.jpg" alt="Varditer Badoyan"></div>
+    <div>
+      <h1>Varditer Badoyan</h1>
+      <div class="tagline">Tourism graduate. I like clear processes, good tools and getting the details right.</div>
+    </div>
+    <div class="status"><span class="dot"></span> Bratislava, SK</div>
+
+    <nav class="sidenav" id="sidenav">
+      <a href="#work">01. My projects</a>
+      <a href="#about">02. About me</a>
+      <a href="#contact">03. Contact</a>
+    </nav>
+
+    <div class="side-cta">
+      <a class="btn primary" href="#contact">Get in Touch</a>
+      <a class="btn small" href="Varditer_Badoyan_CV_ETN_Slovakia.pdf" target="_blank" rel="noopener">Download my CV</a>
+      <div class="side-links">
+        <a href="#contact" onclick="event.preventDefault(); openContact()" title="Email">Email</a>
+        <a href="#contact" onclick="event.preventDefault(); openContact()" title="Phone">Phone</a>
+        <a href="https://www.linkedin.com/in/varditer-badoyan/" target="_blank" rel="noopener noreferrer" title="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- 01 PROJECTS -->
+    <section id="work">
+      <div class="eyebrow"><span class="num">01.</span> My projects</div>
+      <h2 class="h">What I have built</h2>
+      <p class="lead">Hi, I'm Varditer. I studied tourism, and these are projects I made on my own: a small travel service for visitors to Bratislava, and an AI automation that takes care of a weekly routine. Two of them are live, so you can open them. Click a picture to see it bigger.</p>
+
+      <!-- KAMAR service -->
+      <article class="project">
+        <div class="project-shots one">
+          <div class="shot" onclick="openLightbox('images/site_kamar.jpg')" role="button" tabindex="0" aria-label="Enlarge: KAMAR website"><img src="images/site_kamar.jpg" alt="KAMAR concierge website homepage"></div>
+        </div>
+        <div class="project-text">
+          <div class="case-kicker">Travel service · planned from scratch</div>
+          <h3>KAMAR, a concierge service for visitors to Bratislava</h3>
+          <p>Armenian visitors often arrive in Bratislava without the language and without anyone to ask. KAMAR is my plan for helping them: airport pickup, getting to the hotel, a first walk through the city, and one contact for the whole stay.</p>
+          <p>I put together nine services in three packages, set the prices and wrote down what is included and what is not. Then I wrote the website texts, chose the photos and published the site myself, with Claude helping on the code.</p>
+          <div class="case-tags"><span>Service packages</span><span>Pricing</span><span>Website</span><span>Claude</span></div>
+          <a class="live-link" href="https://kamar-concierge.vercel.app" target="_blank" rel="noopener noreferrer">Open the website ↗</a>
+        </div>
+      </article>
+
+      <!-- KAMAR client documents -->
+      <article class="project">
+        <div class="project-shots">
+          <div class="shot" onclick="openLightbox('images/site_intake.jpg')" role="button" tabindex="0" aria-label="Enlarge: client form"><img src="images/site_intake.jpg" alt="KAMAR client form in Armenian with an English option"></div>
+          <div class="shot" onclick="openLightbox('images/site_email.jpg')" role="button" tabindex="0" aria-label="Enlarge: welcome email"><img src="images/site_email.jpg" alt="KAMAR welcome email"></div>
+        </div>
+        <div class="project-text">
+          <div class="case-kicker">Before the trip</div>
+          <h3>Client form, welcome email and pre-arrival pack</h3>
+          <p>A good trip starts before the plane lands, so I prepared everything a client receives before arrival: a short form to fill in (in Armenian or English), a welcome email that explains how the service works, and a personal pre-arrival pack.</p>
+          <p>The pack covers the hotel and check-in time, how to get out of the airport, local transport, the weather for the travel dates and emergency numbers. Small things, but they are exactly what people worry about on their first day.</p>
+          <div class="case-tags"><span>Client communication</span><span>Templates</span><span>Two languages</span></div>
+        </div>
+      </article>
+
+      <!-- Finance automation -->
+      <article class="project">
+        <div class="project-shots">
+          <div class="shot" onclick="openLightbox('images/site_finance.jpg')" role="button" tabindex="0" aria-label="Enlarge: weekly finance report"><img src="images/site_finance.jpg" alt="Weekly finance report made by the AI automation, with notes and warnings at the top"></div>
+          <div class="shot" onclick="openLightbox('images/finance_slack.jpg')" role="button" tabindex="0" aria-label="Enlarge: Slack message"><img src="images/finance_slack.jpg" alt="Slack message the automation sends after the report is published"></div>
+        </div>
+        <div class="project-text">
+          <div class="case-kicker">AI automation · runs every week</div>
+          <h3>From a manual routine to a weekly report that checks itself</h3>
+          <p>Sorting our family bank statements by hand took time every week. Now Claude reads them from Google Drive, records each payment in the right category and publishes a report. When something looks unusual, such as a transfer between my own accounts or a refund, it writes a note at the top.</p>
+          <p>I wrote the rules it follows. If there are duplicates, missing entries or totals that don't match, nothing is published, and I get a Slack message explaining what went wrong.</p>
+          <div class="case-tags"><span>Claude</span><span>Google Drive</span><span>Data checks</span><span>Slack</span></div>
+          <a class="live-link" href="https://finance-automation-six.vercel.app" target="_blank" rel="noopener noreferrer">Open the live report ↗</a>
+        </div>
+      </article>
+
+      <!-- Motoshop -->
+      <article class="project">
+        <div class="project-shots">
+          <div class="shot" onclick="openLightbox('images/motoshop_product_thumb.jpg')" role="button" tabindex="0" aria-label="Enlarge: product page"><img src="images/motoshop_product_thumb.jpg" alt="Motoshop Armenia product page design"></div>
+          <div class="shot" onclick="openLightbox('images/motoshop_category.jpg')" role="button" tabindex="0" aria-label="Enlarge: category page"><img src="images/motoshop_category.jpg" alt="Motoshop Armenia category page design"></div>
+        </div>
+        <div class="project-text">
+          <div class="case-kicker">Internship · team project</div>
+          <h3>Online shop pages for Motoshop Armenia</h3>
+          <p>During my UI/UX internship at Codritive I worked in a product team and designed the homepage and product pages for a motorcycle shop. Before anything went into a design, I checked that the product information was correct.</p>
+          <div class="case-tags"><span>Figma</span><span>Teamwork</span><span>Accuracy</span></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 02 ABOUT -->
+    <section id="about">
+      <div class="eyebrow"><span class="num">02.</span> About me</div>
+      <h2 class="h">About me</h2>
+      <p class="lead">I studied Tourism and Travel Services Management at Yerevan State University. After that I worked as an office assistant, looked after Instagram and Facebook for small businesses, and did a UI/UX design internship. Now I live in Bratislava.</p>
+      <p class="lead">I use AI tools every day and I am quick with new programs, but I never send anything out without checking it myself. I would like to learn the travel business from the inside and stay with a team for the long term.</p>
+
+      <div class="timeline">
+        <div><b>Bachelor's degree</b>, Tourism and Travel Services Management · Yerevan State University <span>2014 – 2018</span></div>
+        <div><b>UI/UX Design Intern</b> · Codritive Co., Armenia <span>Jul 2025 – Nov 2025</span></div>
+        <div><b>Social Media Manager</b> · Freelance, Armenia <span>2019 – 2021</span></div>
+        <div><b>Office Assistant</b> · RuMeA LLC, Armenia <span>2018 – 2019</span></div>
+      </div>
+
+      <div class="tags">
+        <span class="tag">Word</span><span class="tag">Excel</span><span class="tag">Google Drive</span><span class="tag">Slack</span><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Manus</span><span class="tag">Trello</span><span class="tag">Figma</span><span class="tag">Canva</span><span class="tag">GitHub</span><span class="tag">Vercel</span>
+      </div>
+
+      <div class="lang-row">
+        <div>
+          <div class="lang-item"><b>Armenian</b><span>Native</span></div>
+          <div class="bar"><i style="width:100%"></i></div>
+        </div>
+        <div>
+          <div class="lang-item"><b>English</b><span>B1, comfortable in writing</span></div>
+          <div class="bar"><i style="width:45%"></i></div>
+        </div>
+        <div>
+          <div class="lang-item"><b>Slovak</b><span>A1, learning</span></div>
+          <div class="bar"><i style="width:15%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 CONTACT -->
+    <section id="contact">
+      <div class="eyebrow"><span class="num">03.</span> Contact</div>
+      <div class="contact-box">
+        <h3>Get in touch</h3>
+        <p>I live in Bratislava and can start right away. Flexible hours are no problem.</p>
+        <div class="contact-buttons">
+          <button class="btn primary" onclick="openContact()">Email Me</button>
+          <button class="btn" onclick="openContact()">Call</button>
+          <a class="btn" href="Varditer_Badoyan_CV_ETN_Slovakia.pdf" target="_blank" rel="noopener">Download my CV</a>
+        </div>
+        <div class="contact-meta">
+          <span>varditer.badoyann@gmail.com</span>
+          <span>+421 915 251 994</span>
+          <span>Bratislava, Slovakia</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 Varditer Badoyan</footer>
+
+  </main>
+</div>
+
+<!-- Generic modal shell, reused for the contact popup and image lightbox -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this) closeModal()">
+  <div class="modal-box" id="modalBox" role="dialog" aria-modal="true" aria-label="Details" tabindex="-1">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close dialog">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<template id="contact-modal">
+  <div class="contact-modal">
+    <h3>Get in touch</h3>
+    <p class="sub">Based in Bratislava, available immediately. Reach me directly — no forms, no waiting.</p>
+
+    <div class="contact-big">
+      <div>
+        <div class="label">Email</div>
+        <div class="value">varditer.badoyann@gmail.com</div>
+      </div>
+      <div class="actions">
+        <button class="icon-btn" title="Copy email" onclick="copyText('varditer.badoyann@gmail.com', this, 'copyToast1')">⧉</button>
+        <a class="icon-btn" href="mailto:varditer.badoyann@gmail.com" title="Open email app">↗</a>
+      </div>
+    </div>
+    <div class="copy-toast" id="copyToast1" role="status" aria-live="polite"></div>
+
+    <div class="contact-big">
+      <div>
+        <div class="label">Phone</div>
+        <div class="value">+421 915 251 994</div>
+      </div>
+      <div class="actions">
+        <button class="icon-btn" title="Copy number" onclick="copyText('+421915251994', this, 'copyToast2')">⧉</button>
+        <a class="icon-btn" href="tel:+421915251994" title="Call">↗</a>
+      </div>
+    </div>
+    <div class="copy-toast" id="copyToast2" role="status" aria-live="polite"></div>
+
+    <div class="contact-big">
+      <div>
+        <div class="label">Location</div>
+        <div class="value">Bratislava, Slovakia</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- Image lightbox content -->
+<template id="lightbox-template">
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged screenshot">
+</template>
+
+<script>
+  // scroll-spy for sidebar nav
+  const links = document.querySelectorAll('#sidenav a');
+  const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll(){
+    let idx = 0;
+    const y = window.scrollY + 120;
+    sections.forEach((s,i) => { if(s && s.offsetTop <= y) idx = i; });
+    links.forEach((l,i) => l.classList.toggle('active', i===idx));
+  }
+  document.addEventListener('scroll', onScroll);
+  onScroll();
+
+  // Generic modal system
+  const overlay = document.getElementById('modalOverlay');
+  const modalBox = document.getElementById('modalBox');
+  const modalBody = document.getElementById('modalBody');
+  let lastFocusedEl = null;
+
+  function showModal(templateId){
+    lastFocusedEl = document.activeElement;
+    const tpl = document.getElementById(templateId);
+    modalBody.innerHTML = tpl.innerHTML;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    modalBox.focus();
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    modalBox.classList.remove('wide');
+    document.body.style.overflow = '';
+    modalBody.innerHTML = '';
+    if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') { lastFocusedEl.focus(); }
+    lastFocusedEl = null;
+  }
+
+  // Escape closes the open modal; Enter/Space activates non-native
+  // "button" elements (.case-card, .shot divs) that receive keyboard focus.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { closeModal(); return; }
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('.case-card, .shot')) {
+      e.preventDefault();
+      e.target.click();
+    }
+  });
+
+  function openCase(id){ showModal(id); }
+  function openContact(){ showModal('contact-modal'); }
+
+  function openLightbox(src){
+    showModal('lightbox-template');
+    modalBox.classList.add('wide');
+    document.getElementById('lightboxImg').src = src;
+  }
+
+  function copyText(text, btn, toastId){
+    const toast = toastId ? document.getElementById(toastId) : null;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.textContent;
+      btn.textContent = '✓';
+      if (toast) { toast.textContent = 'Copied to clipboard'; }
+      setTimeout(() => {
+        btn.textContent = original;
+        if (toast) { toast.textContent = ''; }
+      }, 1200);
+    }).catch(() => {
+      if (toast) { toast.textContent = 'Could not copy — please copy it manually.'; }
+    });
+  }
+</script>
+</body>
+</html>
+
